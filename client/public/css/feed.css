@@ -9,7 +9,7 @@ header {
 	justify-content: space-between;
 	align-items: center;
 
-	background-color: red;
+	background-color: rgb(29, 0, 0);
 	font-size: 30px;
 	color: white;
 }
@@ -21,36 +21,48 @@ main {
 }
 
 footer {
-	position: absolute;
-	left: 0px;
-  bottom: 0px;
+	position: relative;
+	bottom: -30px;
+	height: 30px;
 	width: 100%;
-	background-color: red;
+	background-color: rgb(79, 21, 21);
 	text-align: center;
-	font-size: 20px;
+	font-size: 10px;
 }
 
 #portal_button {
 	position: fixed;
-	right: 169px;
+	right: 150px;
 	top: 3px;
 }
 
 #portal_button_text {
+	font-family: "Grenze Gotisch", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
 	position: fixed;
-	right: 10px;
-	top: -28px;
+	right: 15px;
+	top: -34px;
+
 }
 
 #Foxchatter_text_Logo {
+	font-family: "Grenze Gotisch", serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
 	position: fixed;
 	left: 10px;
-	top: -28px;
+	top: -60px;
+	color: rgb(181, 34, 47);
+
+
 }
 
 a {
-	color: blue;
-	text-decoration: none;
+	color: rgb(0, 30, 255);
+	text-decoration-line: rgb(0, 30, 255);
 }
 
 #redfox{
@@ -61,11 +73,26 @@ a {
 }
 
 #newsfeed {
-	max-width: 600px;
-	min-width: 600px;
+	max-width: 1200;
+	min-width: 1200;
 }
 
 .feedImage {
 	max-width: 150px;
 	max-height: 150px;
+}
+
+#photo {
+	float: left;
+	max-width: 300px;
+	min-width: 200px;
+}
+
+ h2{
+	color: rgb(255, 0, 0);
+	text-decoration-line: rgb(255, 0, 0);
+}
+
+#site_info {
+	color: white;
 }
