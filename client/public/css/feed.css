@@ -1,6 +1,6 @@
 header {
 	position: fixed;
-	left:00px;
+	left: 00px;
 	top: 0px;
 	height: 60px;
 	width: 100%;
@@ -9,9 +9,13 @@ header {
 	justify-content: space-between;
 	align-items: center;
 
-	background-color: rgb(29, 0, 0);
+	background-color: rgb(10, 0, 0);
 	font-size: 30px;
 	color: white;
+}
+
+body {
+	background-image: url("/images/marist_bg.jpeg");
 }
 
 main {
@@ -21,19 +25,34 @@ main {
 }
 
 footer {
-	position: relative;
-	bottom: -30px;
-	height: 30px;
-	width: 100%;
-	background-color: rgb(79, 21, 21);
+	position:fixed;
+	bottom:0;
+	left:0;
+	height: 2.5rem;
+	background-color: rgb(10, 0, 0);
 	text-align: center;
-	font-size: 10px;
+	font-size: 13px;
+	right: .5px;
+}
+
+#story_title {
+
+	font-family: "Grenze Gotisch", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	color: rgb(181, 34, 47);
+}
+
+#story_body {
+
+	color: hsl(10, 0, 0);
 }
 
 #portal_button {
 	position: fixed;
 	right: 150px;
-	top: 3px;
+	top: 4px;
 }
 
 #portal_button_text {
@@ -43,38 +62,42 @@ footer {
 	font-style: normal;
 	position: fixed;
 	right: 15px;
-	top: -34px;
+	top: -35px;
 
 }
 
 #Foxchatter_text_Logo {
 	font-family: "Grenze Gotisch", serif;
 	font-optical-sizing: auto;
-	font-weight: 700;
+	font-weight: 750;
 	font-style: normal;
 	position: fixed;
 	left: 10px;
-	top: -60px;
+	top: -45.5px;
 	color: rgb(181, 34, 47);
 
 
 }
 
-a {
+#read_more {
 	color: rgb(0, 30, 255);
 	text-decoration-line: rgb(0, 30, 255);
 }
 
-#redfox{
+#redfox {
 	position: relative;
 	float: left;
 	height: 50px;
 	bottom: 5px;
 }
 
-#newsfeed {
-	max-width: 1200;
-	min-width: 1200;
+#newsFeed {
+	padding-top: 20px;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-bottom: 20px;
+	background: white;
+	width: auto;
 }
 
 .feedImage {
@@ -83,16 +106,30 @@ a {
 }
 
 #photo {
-	float: left;
 	max-width: 300px;
-	min-width: 200px;
-}
-
- h2{
-	color: rgb(255, 0, 0);
-	text-decoration-line: rgb(255, 0, 0);
+	min-width: 300px;
 }
 
 #site_info {
 	color: white;
+}
+
+.footerlink {
+	color: white;
+}
+
+.words {
+	float: left;
+	margin-right: 50px;
+	max-width: 300px;
+	min-width: 300px;
+
+}
+
+.tp:hover{
+	cursor:pointer;
+}
+
+.news_chunk{
+	padding: 20px;
 }

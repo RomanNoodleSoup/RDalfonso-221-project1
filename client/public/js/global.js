@@ -6,7 +6,7 @@ function goToLocation(location) {
 
 class Sparkles {
 	constructor(canvas) {
-	  this.colors = ["purple", "red", "yellow", "green"];
+	  this.colors = ["black", "red", "white", "pink"];
 	  this.canvas = canvas;
 	  this.ctx = this.canvas.getContext("2d");
 	  this.intensity = 20;
