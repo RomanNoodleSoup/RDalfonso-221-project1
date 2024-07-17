@@ -7,6 +7,7 @@ exports.getAllFeedItems = (req, res) => {
 // Create an array called currentStories
 var currentStories = [];
 
+
 // Create 3 instances of feedItem and add them to the array as elements
 var feedItem1 = feedItem.createFeedItem("Marist Spring Concert!", "Click \"read more\" for more details about out lineup!", "https://www.youtube.com/watch?v=dQw4w9WgXcQ", "images/marist_spring_concert.png");
 var feedItem2 = feedItem.createFeedItem("Study in Dublin", "Study in the capital city of the Emerald Isle", "http://linkurl2.com", "images/dublin.jpg");
@@ -17,14 +18,68 @@ currentStories.push(feedItem2);
 currentStories.push(feedItem3);
 currentStories.push(feedItem4);
 
+
+exports.getAllFeedItems = function(req, res) {
+	res.setHeader('Content-Type', 'application/json');
+	res.send(currentStories);
+}
+
 exports.getFeedItem = function(req, res) {
+	res.setHeader('Content-Type', 'application/json');
+  	res.send(currentStories[req.params.feedItemID]);
+}
+
+exports.saveFeedItem = function(req, res) {
+	let newFeedItem = feedItem.createFeedItem(req.body.title, req.body.body, req.body.linkUrl, req.body.imageUrl);
+	currentStories.push(newFeedItem);
 	res.setHeader('Content-Type', 'application/json');
 	res.send(currentStories);
 }
 
 exports.deleteFeedItem = function(req, res) {
-	currentStories.splice(req.feedItem.body, 1);
+	currentStories.splice(req.params.feedItemID, 1);
 	res.setHeader('Content-Type', 'application/json');
 	res.send(currentStories);
 }
 
+
+exports.updateFeedItem = function(req, res) {
+	// get the existing user from the array
+	var updatedFeedItem = currentStories[req.params.feedItemID];
+
+	// check to see what has been passed and update the local copy
+	console.log(req.body.title);
+	if(req.body.title)
+		updatedFeedItem.title = req.body.title;
+	if(req.body.body)
+		updatedFeedItem.lastName = req.body.body;
+	if(req.body.linkUrl)
+		updatedFeedItem.linkUrl= req.body.linkUrl;
+	if(req.body.imageUrl)
+		updatedFeedItem.imageUrl = req.body.imageUrl;
+
+	// save the local copy of the user back into the array
+	currentStories[req.params.feedItemID] = updatedFeedItem;
+
+	res.setHeader('Content-Type', 'application/json');
+	res.send(currentStories[req.params.feedItemID]);
+}
+
+exports.replaceFeedItem = function(req, res) {
+	// get the existing user from the array
+	var updatedFeedItem = currentStories[req.params.feedItemID];
+
+	// check to see what has been passed and update the local copy
+	console.log(req.body.title);
+	if(req.body.title && req.body.body && req.body.linkUrl && req.body.imageUrl)
+		updatedFeedItem.title = req.body.title;
+		updatedFeedItem.lastName = req.body.body;
+		updatedFeedItem.linkUrl= req.body.linkUrl;
+		updatedFeedItem.imageUrl = req.body.imageUrl;
+
+	// save the local copy of the user back into the array
+	currentStories[req.params.feedItemID] = updatedFeedItem;
+
+	res.setHeader('Content-Type', 'application/json');
+	res.send(currentStories[req.params.feedItemID]);
+}

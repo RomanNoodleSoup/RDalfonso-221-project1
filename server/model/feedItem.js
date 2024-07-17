@@ -1,6 +1,6 @@
 function feedItem(title, body, linkUrl, imageUrl) {
-    this.Title = title;
-    this.Body = body;
+    this.title = title;
+    this.body = body;
     this.linkUrl = linkUrl;
     this.imageUrl = imageUrl;
 }
