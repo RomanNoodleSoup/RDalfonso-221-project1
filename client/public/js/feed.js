@@ -12,12 +12,14 @@ for (let i = 0; i < tps.length; i++) {
 
 
 
+/*
 function feedItem(title, body, linkUrl, imageUrl) {
     this.Title = title;
     this.Body = body;
     this.linkUrl = linkUrl;
     this.imageUrl = imageUrl;
 }
+
 
 // Create an array called currentStories
 let currentStories = [];
@@ -27,12 +29,12 @@ currentStories.push(new feedItem("Marist Spring Concert!", "Click \"read more\" 
 currentStories.push(new feedItem("Study in Dublin", "Study in the capital city of the Emerald Isle", "http://linkurl2.com", "images/dublin.jpg"));
 currentStories.push(new feedItem("Studiare in Firenze!", "Il programma nuovo di studio in Italia per gli studenti del primo anno.", "http://linkurl1.com", "images/firenze.jpg"));
 
+*/
 
 
-displayItem();
 
 // Create a function called displayItem()
-function displayItem(feedItem) {
+function displayItem() {
     // Get the newsfeed element
     let newsFeed = document.getElementById("newsFeed");
 
@@ -43,8 +45,8 @@ function displayItem(feedItem) {
         
             <div class = 'news_chunk'>
             <div class = 'words'>
-            <h2 id='story_title'>${currentStories[i].Title}</h2>
-            <p id='story_body'>${currentStories[i].Body}</p>
+            <h2 id='story_title'>${currentStories[i].title}</h2>
+            <p id='story_body'>${currentStories[i].body}</p>
             <a id='read_more'href="${currentStories[i].linkUrl}">Read more</a>
             </div>
             <a href="${currentStories[i].linkUrl}"><img id="photo" src="${currentStories[i].imageUrl}" alt="${currentStories[i].Title}"></a>
@@ -56,5 +58,19 @@ function displayItem(feedItem) {
     }
 }
 
+
+window.addEventListener('load', () => {
+    fetch('/api/currentStories').then((res) => {
+
+        res.json().then((data) => {
+            console.log(data)
+            currentStories = data
+            displayItem()
+        })
+        
+        console.log("Page has loaded!");
+    })
+    
+});
 
 

@@ -73,7 +73,7 @@ exports.replaceFeedItem = function(req, res) {
 	console.log(req.body.title);
 	if(req.body.title && req.body.body && req.body.linkUrl && req.body.imageUrl)
 		updatedFeedItem.title = req.body.title;
-		updatedFeedItem.lastName = req.body.body;
+		updatedFeedItem.body = req.body.body;
 		updatedFeedItem.linkUrl= req.body.linkUrl;
 		updatedFeedItem.imageUrl = req.body.imageUrl;
 
