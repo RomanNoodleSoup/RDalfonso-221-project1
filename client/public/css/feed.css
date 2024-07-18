@@ -132,3 +132,7 @@ footer {
 .news_chunk{
 	padding: 20px;
 }
+
+.delete-button{
+	color: red;
+}
