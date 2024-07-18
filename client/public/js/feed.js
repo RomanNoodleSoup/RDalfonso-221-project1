@@ -42,6 +42,20 @@ function displayItem() {
 
 
 window.addEventListener('load', () => {
+    document.getElementById('newFeed').addEventListener('submit', ()=> {
+
+        fetch('/api/currentStories/' + i, 
+            {
+                method: 'post',
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                },
+                body: '{"title": "' + title + '", "body": "' + body + '","linkUrl": "' + linkUrl + '","imageUrl": "' + imageUrl + '"}'
+            })
+
+        });
+
+    
     fetch('/api/currentStories').then((res) => {
 
         res.json().then((data) => {
