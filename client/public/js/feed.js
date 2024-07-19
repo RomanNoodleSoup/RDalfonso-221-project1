@@ -41,20 +41,12 @@ function displayItem() {
 }
 
 
+
+
+
+
+
 window.addEventListener('load', () => {
-    document.getElementById('newFeed').addEventListener('submit', ()=> {
-
-        fetch('/api/currentStories/' + i, 
-            {
-                method: 'post',
-                headers: {
-                    "Content-type": "application/json; charset=UTF-8"
-                },
-                body: '{"title": "' + title + '", "body": "' + body + '","linkUrl": "' + linkUrl + '","imageUrl": "' + imageUrl + '"}'
-            })
-
-        });
-
     
     fetch('/api/currentStories').then((res) => {
 
@@ -80,7 +72,33 @@ window.addEventListener('load', () => {
         console.log("Page has loaded!");
     })
 
+    document.getElementById('submit').addEventListener('click', () => {
+        
+        console.log('haii')
+
+        let title = document.getElementById('title').value;
+        let body = document.getElementById('body').value;
+        let linkUrl = document.getElementById('linkUrl').value;
+        let imageUrl = document.getElementById('imageUrl').value;
+        
+        console.log(title);
+        
+        fetch('/api/currentStories/', 
+            {
+                method: 'post',
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                },
+                body: '{"title": "' + title + '", "body": "' + body + '","linkUrl": "' + linkUrl + '","imageUrl": "' + imageUrl + '"}'
+              
+            })
+            
+        }
+    );
+
+
+
+
+
 });
-
-
 

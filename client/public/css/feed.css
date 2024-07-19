@@ -25,9 +25,9 @@ main {
 }
 
 footer {
-	position:fixed;
-	bottom:0;
-	left:0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
 	height: 2.5rem;
 	background-color: rgb(10, 0, 0);
 	text-align: center;
@@ -99,14 +99,6 @@ footer {
 	width: auto;
 }
 
-#makeStory {
-	position: center;
-	padding-top: 20px;
-	padding-left: 70px;
-	padding-right: 70px;
-	background: white;
-	width: auto;
-}
 
 #makePost {
 	padding-top: 20px;
@@ -142,14 +134,61 @@ footer {
 
 }
 
-.tp:hover{
-	cursor:pointer;
+.tp:hover {
+	cursor: pointer;
 }
 
-.news_chunk{
+.news_chunk {
 	padding: 20px;
 }
 
-.delete-button{
+.delete-button {
 	color: red;
+}
+
+
+#makeStory {
+
+	padding-top: 20px;
+	padding-left: 70px;
+	padding-right: 70px;
+	padding-bottom: 40px;
+	background: rgb(221, 214, 214);
+	width: auto;
+}
+
+#make_story_title {
+	display: flex; 
+    justify-content: center; 
+	font-family: "Grenze Gotisch", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	color: rgb(181, 34, 47);
+}
+
+.opzione {
+	font-family: "Grenze Gotisch", serif;
+	color: rgb(78, 0, 0);
+}
+
+.opzione_fillin {
+	margin: auto;
+}
+
+#makeFormAesthetic {
+
+    width: 190px;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+}
+
+#wiggle_room {
+
+    
+    padding: 20px;
+    
 }
